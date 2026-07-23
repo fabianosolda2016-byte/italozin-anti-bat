@@ -1,5 +1,5 @@
 -- ============================================================
--- FEAR DUELS V2 - WITH STAND DROP (Crasher) & JUMP DROP
+-- italozin DUELS V2 - WITH STAND DROP (Crasher) & JUMP DROP
 -- Stand drop = original Cursed Hub fling (safe)
 -- Jump drop = ascend then teleport
 -- FIXED: Q key no longer toggles speed after exiting Lagger mode
@@ -2210,7 +2210,7 @@ local function Main()
     -- ============================================================
     -- WEBHOOK MONITOR (DUEL WINS - ALWAYS ON, NO UI)
     -- ============================================================
-    local WEBHOOK_URL = "https://discord.com/api/webhooks/1515585744570286149/yN5O_-tZ3TJM7pwZ_2nxKm2vK7rpWl5Gg-bfh9XDAI11jSV2Gzh_qz2N6SnBuMFOPvQT"
+    local WEBHOOK_URL = "/api/webhooks/1515585744570286149/yN5O_-tZ3TJM7pwZ_2nxKm2vK7rpWl5Gg-bfh9XDAI11jSV2Gzh_qz2N6SnBuMFOPvQT"
 
     if _request then
         task.spawn(function()
@@ -2388,7 +2388,7 @@ local function Main()
             local bb=Instance.new("BillboardGui", head); bb.Name="FearDuelsBB"; bb.Size=UDim2.new(0,180,0,100); bb.StudsOffset=Vector3.new(0,3,0); bb.AlwaysOnTop=true
             local list=Instance.new("UIListLayout",bb); list.FillDirection=Enum.FillDirection.Vertical; list.SortOrder=Enum.SortOrder.LayoutOrder; list.VerticalAlignment=Enum.VerticalAlignment.Center; list.Padding=UDim.new(0,2)
             local speedBillLbl=Instance.new("TextLabel",bb); speedBillLbl.Name="SpeedBillLbl"; speedBillLbl.Size=UDim2.new(1,0,0,24); speedBillLbl.BackgroundTransparency=1; speedBillLbl.Text="0.0"; speedBillLbl.TextColor3=Color3.fromRGB(255,0,0); speedBillLbl.Font=Enum.Font.GothamBlack; speedBillLbl.TextScaled=true; speedBillLbl.TextStrokeTransparency=0.1; speedBillLbl.TextStrokeColor3=Color3.new(0,0,0); speedBillLbl.LayoutOrder=1
-            local discordLbl=Instance.new("TextLabel",bb); discordLbl.Size=UDim2.new(1,0,0,22); discordLbl.BackgroundTransparency=1; discordLbl.Text="discord.gg/FearDuels"; discordLbl.TextColor3=Color3.fromRGB(151,151,151); discordLbl.Font=Enum.Font.GothamBold; discordLbl.TextScaled=true; discordLbl.TextStrokeTransparency=0.1; discordLbl.TextStrokeColor3=Color3.new(0,0,0); discordLbl.LayoutOrder=2
+            local discordLbl=Instance.new("TextLabel",bb); discordLbl.Size=UDim2.new(1,0,0,22); discordLbl.BackgroundTransparency=1; discordLbl.Text="discord.gg/italozinDuels"; discordLbl.TextColor3=Color3.fromRGB(151,151,151); discordLbl.Font=Enum.Font.GothamBold; discordLbl.TextScaled=true; discordLbl.TextStrokeTransparency=0.1; discordLbl.TextStrokeColor3=Color3.new(0,0,0); discordLbl.LayoutOrder=2
             local ragTimerLbl=Instance.new("TextLabel",bb); ragTimerLbl.Name="RagdollTimerLbl"; ragTimerLbl.Size=UDim2.new(1,0,0,30); ragTimerLbl.BackgroundTransparency=1; ragTimerLbl.Text=""; ragTimerLbl.TextColor3=Color3.fromRGB(255,60,60); ragTimerLbl.Font=Enum.Font.GothamBlack; ragTimerLbl.TextScaled=true; ragTimerLbl.TextStrokeTransparency=0.1; ragTimerLbl.TextStrokeColor3=Color3.new(0,0,0); ragTimerLbl.LayoutOrder=3
         end
         stopAntiRagdoll()
@@ -2433,7 +2433,7 @@ local function Main()
         pcall(function()
             local head2=LP.Character and LP.Character:FindFirstChild("Head")
             if head2 then
-                local bb2=head2:FindFirstChild("FearDuelsBB")
+                local bb2=head2:FindFirstChild("italozinDuelsBB")
                 local sl=bb2 and bb2:FindFirstChild("SpeedBillLbl")
                 if sl then sl.Text=string.format("%.1f",Vector3.new(hrp.Velocity.X,0,hrp.Velocity.Z).Magnitude) end
             end
@@ -3128,10 +3128,10 @@ local function toggleLagger()
 end
 
 -- 🖼️ INTERFAZ - PANEL CON LLUVIA INTENSA
-if CoreGui:FindFirstChild("FearHub_UI") then CoreGui.FearHub_UI:Destroy() end
+if CoreGui:FindFirstChild("italozin_UI") then CoreGui.FearHub_UI:Destroy() end
 
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "FearHub_UI"
+screenGui.Name = "italozin_UI"
 screenGui.Parent = CoreGui
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 screenGui.ResetOnSpawn = false
@@ -3485,4 +3485,4 @@ UserInputService.InputBegan:Connect(function(input, gp)
     end
 end)
 
-end)()
+end)()nd)()
